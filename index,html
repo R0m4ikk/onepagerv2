@@ -1,0 +1,152 @@
+<html>
+<head>
+<title> My Second Page</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
+
+<style>
+#hello
+{
+	position: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 70%);
+
+ -webkit-filter: drop-shadow(5px 5px 5px #ffff00);
+  filter: drop-shadow(5px 5px 5px #ffff00);
+}
+#hello_image{
+
+   position: left;
+  top: 50%;
+  left: 150%;
+  transform: translate(-30%, 50%);
+
+ -webkit-filter: drop-shadow(5px 5px 5px #ffff00);
+  filter: drop-shadow(5px 5px 5px #ffff00);
+}
+#second_image{
+position: right-side;
+  top: 30%;
+  right: 150%;
+  transform: translate(30%, -25%);
+
+ -webkit-filter: drop-shadow(5px 5px 5px #ffff00);
+  filter: drop-shadow(5px 5px 5px #ffff00);
+}
+#third_image{
+position: left-side;
+  top: 50%;
+  left: 150%;
+  transform: translate(0%, -20%);
+
+ -webkit-filter: drop-shadow(5px 5px 5px #ffff00);
+  filter: drop-shadow(5px 5px 5px #ffff00);
+}
+
+body{
+background-color: black;
+}
+
+.container {
+  text-align: center;
+  color: black;
+ text-shadow: 0 0 3px #FF0000, 0 0 5px #FF0000;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -500%);
+}
+
+
+#demo {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ font-family: "Rubik", sans-serif;
+font-size: 20px;
+text-shadow: 0 0 3px #FF0000, 0 0 5px #FF0000;
+color: blue;
+}
+
+.rotate {
+  animation: rotation 30s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+
+</style>
+<script>
+
+
+var btn =document.getElementById('Gigarik tut');
+
+var flag=false;
+
+function playAudio(url) {
+ 
+if (!flag){
+  var audio = new Audio(url);
+
+  
+  audio.loop=true;
+  audio.play();
+  flag=true;}
+
+
+
+}
+</script>
+</head>
+<body>
+
+
+<div class="container">
+
+<div id="hello_image">
+<img src="1.png" class="rotate" width=30% height=auto >
+</div>
+<div id="second_image">
+<img src="2.jpg" class="rotate" width=30% height=auto >
+</div>
+<div id="third_image">
+<img src="3.jpg" class="rotate" width=30% height=auto >
+</div>
+
+
+<div id="hello">
+<div class="centered"> 
+<h1 onclick="playAudio('images/hello.mp3')">НА ЧЁМ ЕДЕМ?!</h1>
+</div>
+</div>
+
+</div>
+
+<p id="demo"></p>
+<script>
+
+document.getElementById("hello_image").addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "YANDEX GO нас спасёт, до нужной точки довезет!";
+});
+document.getElementById("second_image").addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "СИТИМОБИЛ лучший друг, вас подкинет без недуг!";
+});
+document.getElementById("third_image").addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "UBER RUSSIA";
+});
+</script>
+
+</body>
+</html>
